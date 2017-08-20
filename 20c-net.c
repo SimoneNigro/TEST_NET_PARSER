@@ -53,7 +53,7 @@ void test_system_5() // test parser
 //	tensor padded_input = pad_tensor(input, 4, 4);
 //	free_tensor(&input);
 			
-	network net = parse_network("./input_files/synth_net.xml");
+	network net = parse_network("./input_files/CCNN_model.xml");
 //	set_input(&padded_input, &net);
 	set_input(&input, &net);
 	printf("\n---- Forwarding NETWORK ----\n\n");
