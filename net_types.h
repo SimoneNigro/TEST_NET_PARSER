@@ -23,7 +23,7 @@
 //typedef double tensor_data_t;
 typedef float tensor_data_t;
 
-typedef long unsigned int address_t
+typedef long unsigned int address_t;
 
 long unsigned int _mem_alloc_by_model;
 long unsigned int _mem_alloc_by_volumes;
@@ -33,8 +33,8 @@ typedef struct
 	int d;
 	int h;
 	int w;
-	//tensor_data_t *data;
-	address_t data_addr
+	tensor_data_t *data;
+	address_t data_addr;
 } tensor;
 
 typedef enum

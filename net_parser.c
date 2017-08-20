@@ -164,9 +164,6 @@ module parse_network(char *to_parse_fn)
 	mxml_node_t *curr_node;
 	module network = {0}; // network to parse and return
 	
-	//LEGGO 
-
-
 	curr_node = mxmlWalkNext(xml, xml, MXML_DESCEND); // network description start
 	
 	if(strcmp(mxmlGetElement(curr_node), "container") == 0)

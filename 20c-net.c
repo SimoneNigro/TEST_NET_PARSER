@@ -17,6 +17,8 @@ typedef module network;
 
 void test_system_5() // test parser
 {
+	char * SHARED_DRAM;
+
 //	time_t start, end;
 	
 //	time(&start);

@@ -79,7 +79,24 @@ module init_convolutional_mod(	int n_fil,
 
 void inline forward_convolutional_mod(module *cm)
 {
-	cm->output = convolve_tensors(cm->input[0], cm->filters, &(cm->bias), cm->n_filters, cm->pad_h, cm->pad_w, cm->stride_h, cm->stride_w);
+	tensor out_vol;
+	
+	out_vol.w = (cm->input[0].w - cm->filters[0].w + 2*cm->pad_w)/cm->stride_w + 1;
+	out_vol.h = (cm->input[0].h - cm->filters[0].h + 2*cm->pad_h)/cm->stride_h + 1;
+	out_vol.d = cm->n_filters;
+
+	int out_len = out_vol.d*out_vol.w*out_vol.h;
+
+	out_vol.data = calloc(out_vol.w*out_vol.h*out_vol.d, sizeof(tensor_data_t));
+	
+	// TEST
+	_mem_alloc_by_volumes += out_vol.d*out_vol.w*out_vol.h*sizeof(tensor_data_t);
+
+	convolve_tensors(&out_vol,out_len,cm->input[0], cm->filters, &(cm->bias), cm->n_filters, cm->pad_h, cm->pad_w, cm->stride_h, cm->stride_w);
+	
+	cm->output = out_vol;
+
+	//free_tensor(&out_vol);
 }
 
 void print_convolutional_mod(module cm, int print_tensors)

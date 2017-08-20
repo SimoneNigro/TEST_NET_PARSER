@@ -221,8 +221,8 @@ static void convolve_patches(tensor_data_t *out, tensor filter, tensor input, in
 	}	
 }
 
-tensor convolve_tensors(tensor input, tensor *filters, tensor *bias, int n_filters, int pad_h, int pad_w, int stride_h, int stride_w)
-{
+void convolve_tensors(tensor *out, int out_len, tensor input, tensor *filters, tensor *bias, int n_filters, int pad_h, int pad_w, int stride_h, int stride_w)
+{/*
 	tensor out_vol;
 	
 	out_vol.w = (input.w - filters[0].w + 2*pad_w)/stride_w + 1;
@@ -232,13 +232,13 @@ tensor convolve_tensors(tensor input, tensor *filters, tensor *bias, int n_filte
 	
 	// TEST
 	_mem_alloc_by_volumes += out_vol.d*out_vol.w*out_vol.h*sizeof(tensor_data_t);
-	
+	*/
 	if(pad_h && pad_w) input = pad_tensor(input, pad_h, pad_w);
 	
-	tensor_data_t *out_data_ptr = out_vol.data;
+	//tensor_data_t *out_data_ptr = out_vol.data;
 	
-	int out_len = out_vol.d*out_vol.w*out_vol.h;
-	int out_slice_len = out_len/out_vol.d;
+	//int out_len = out_vol.d*out_vol.w*out_vol.h;
+	//int out_slice_len = out_len/out_vol.d;
 	
 	int h_offset = 0;
 	int w_offset = 0;
@@ -250,10 +250,10 @@ tensor convolve_tensors(tensor input, tensor *filters, tensor *bias, int n_filte
 	for(out_i = 0; out_i < out_len; out_i++)
 	{
 		for(depth = 0; depth < input.d; depth++)
-			convolve_patches(&out_data_ptr[out_i], filters[filter_i], input, depth, h_offset, w_offset);
+			convolve_patches((*out).data, filters[filter_i], input, depth, h_offset, w_offset);
 		
 		if(bias)
-			out_data_ptr[out_i] += (*bias).data[filter_i];
+			(*out).data[out_i] += (*bias).data[filter_i];
 		
 		if(w_offset + stride_w + filters[filter_i].w <= input.w) 
 			w_offset += stride_w;
@@ -271,7 +271,7 @@ tensor convolve_tensors(tensor input, tensor *filters, tensor *bias, int n_filte
 		}
 	}
 	
-	return out_vol;
+	//return out_vol;
 }
 //#endif
 // END NEW CONVOLUTION ENGINE CODE

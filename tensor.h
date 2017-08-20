@@ -12,7 +12,7 @@ tensor init_tensor(int d, int w, int h, int rand_init);
 void free_tensor(tensor *t);
 void print_tensor(tensor t);
 
-tensor convolve_tensors(tensor input, tensor *filters, tensor *bias, int n_filters, int pad_h, int pad_w, int stride_h, int stride_w);
+void convolve_tensors(tensor *out, int out_len,tensor input, tensor *filters, tensor *bias, int n_filters, int pad_h, int pad_w, int stride_h, int stride_w);
 tensor maxpool_operation(tensor input, int ker_height, int ker_width, int pad_h, int pad_w, int stride_h, int stride_w);
 tensor pad_tensor(tensor src, int pad_h, int pad_w);
 void concat_tensors(int concat_dim, int n_tensors, tensor *to_concat, tensor *out);
