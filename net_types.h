@@ -94,4 +94,25 @@ typedef struct module
 	struct module *modules;
 } module;
 
+typedef struct layer_config {
+  int n_layer; //id layer
+  int in_w;  // input dimensions
+  int in_h;
+  int out_w;
+  int out_h;
+  int in_ch;
+  int out_ch;
+  int ker_w;
+  int ker_h;
+  int ker_ch;
+  int str_w;
+  int str_h;
+  int pad_w;
+  int pad_h;
+  int relu;
+  unsigned int mem_addr_input;
+  unsigned int mem_addr_output;
+  unsigned int mem_addr_weights;
+} layer_config;
+
 #endif

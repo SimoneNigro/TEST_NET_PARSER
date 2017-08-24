@@ -1,0 +1,910 @@
+desc: (none)
+cmd: ./20c-net
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=778939
+mem_heap_B=24738
+mem_heap_extra_B=4974
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=3220830
+mem_heap_B=4096
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=4438859
+mem_heap_B=28049
+mem_heap_extra_B=1135
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=5513028
+mem_heap_B=37133
+mem_heap_extra_B=2099
+mem_stacks_B=0
+heap_tree=detailed
+n9: 37133 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 17165 0x53E2488: strdup (strdup.c:42)
+  n1: 16761 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 16761 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 16761 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 16761 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 16761 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 404 in 3 places, all below massif's threshold (1.00%)
+ n1: 8192 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 8192 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 8192 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 8192 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 8192 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n1: 4096 0x53C41D3: _IO_file_doallocate (filedoalloc.c:127)
+  n1: 4096 0x53D2592: _IO_doallocbuf (genops.c:398)
+   n1: 4096 0x53D169A: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:556)
+    n2: 4096 0x53D260C: _IO_default_uflow (genops.c:413)
+     n1: 4096 0x53CD106: getc (getc.c:38)
+      n1: 4096 0x4050A6: mxml_file_getc (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+       n1: 4096 0x407D5B: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+        n1: 4096 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+         n1: 4096 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+          n0: 4096 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 4096 0x403644: parse_tensor_data (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 4096 0x401512: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n0: 4096 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n2: 1056 0x411390: mxmlNewElement (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 968 0x408A53: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 968 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 968 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 968 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 88 in 1 place, below massif's threshold (1.00%)
+ n1: 840 0x411CED: _mxml_global (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 840 0x407CBE: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 840 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 840 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 840 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 608 in 8 places, all below massif's threshold (1.00%)
+ n2: 552 0x53C4CDB: __fopen_internal (iofopen.c:69)
+  n1: 552 0x4036D1: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 552 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n0: 552 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 528 0x411540: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 528 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 528 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 528 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 528 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+#-----------
+snapshot=5
+#-----------
+time=7393445
+mem_heap_B=44173
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=8602734
+mem_heap_B=53389
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=10215162
+mem_heap_B=65677
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=11962041
+mem_heap_B=78989
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=14111939
+mem_heap_B=95373
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=15455577
+mem_heap_B=105613
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=17202342
+mem_heap_B=118925
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=detailed
+n5: 118925 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 90112 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 90112 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 90112 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 90112 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 90112 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n2: 17165 0x53E2488: strdup (strdup.c:42)
+  n1: 16761 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 16761 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 16761 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 16761 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 16761 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 404 in 3 places, all below massif's threshold (1.00%)
+ n1: 4096 0x53C41D3: _IO_file_doallocate (filedoalloc.c:127)
+  n1: 4096 0x53D2592: _IO_doallocbuf (genops.c:398)
+   n1: 4096 0x53D169A: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:556)
+    n2: 4096 0x53D260C: _IO_default_uflow (genops.c:413)
+     n1: 4096 0x53CD106: getc (getc.c:38)
+      n1: 4096 0x4050A6: mxml_file_getc (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+       n1: 4096 0x407D5B: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+        n1: 4096 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+         n1: 4096 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+          n0: 4096 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 4096 0x403644: parse_tensor_data (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 4096 0x401512: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n0: 4096 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 3456 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=18277290
+mem_heap_B=127117
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=19486693
+mem_heap_B=136333
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=20561643
+mem_heap_B=144525
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=22442755
+mem_heap_B=158861
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=24055171
+mem_heap_B=171149
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=25130125
+mem_heap_B=179341
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=26473875
+mem_heap_B=189581
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=27817503
+mem_heap_B=199821
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=28892457
+mem_heap_B=208013
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=30504879
+mem_heap_B=220301
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=32117301
+mem_heap_B=232589
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=34267205
+mem_heap_B=248973
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=35610943
+mem_heap_B=259213
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=37760833
+mem_heap_B=275597
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=detailed
+n5: 275597 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 246784 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 246784 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 246784 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 246784 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 246784 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n2: 17165 0x53E2488: strdup (strdup.c:42)
+  n1: 16761 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 16761 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 16761 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 16761 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 16761 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 404 in 3 places, all below massif's threshold (1.00%)
+ n1: 4096 0x53C41D3: _IO_file_doallocate (filedoalloc.c:127)
+  n1: 4096 0x53D2592: _IO_doallocbuf (genops.c:398)
+   n1: 4096 0x53D169A: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:556)
+    n2: 4096 0x53D260C: _IO_default_uflow (genops.c:413)
+     n1: 4096 0x53CD106: getc (getc.c:38)
+      n1: 4096 0x4050A6: mxml_file_getc (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+       n1: 4096 0x407D5B: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+        n1: 4096 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+         n1: 4096 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+          n0: 4096 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 4096 0x403644: parse_tensor_data (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 4096 0x401512: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n0: 4096 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 3456 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=38835793
+mem_heap_B=283789
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=39910753
+mem_heap_B=291981
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=41791859
+mem_heap_B=306317
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=42866813
+mem_heap_B=314509
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=44748029
+mem_heap_B=328845
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=45822987
+mem_heap_B=337037
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=47435413
+mem_heap_B=349325
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=48510365
+mem_heap_B=357517
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=50122785
+mem_heap_B=369805
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=51197739
+mem_heap_B=377997
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=52810163
+mem_heap_B=390285
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=54960067
+mem_heap_B=406669
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=57109969
+mem_heap_B=423053
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=58184927
+mem_heap_B=431245
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=59259881
+mem_heap_B=439437
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=61409775
+mem_heap_B=455821
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=62484731
+mem_heap_B=464013
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=64097163
+mem_heap_B=476301
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=65172113
+mem_heap_B=484493
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=66784537
+mem_heap_B=496781
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=67859487
+mem_heap_B=504973
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=69471911
+mem_heap_B=517261
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=70546865
+mem_heap_B=525453
+mem_heap_extra_B=2083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=71637034
+mem_heap_B=1033849
+mem_heap_extra_B=2127
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=71638773
+mem_heap_B=1034014
+mem_heap_extra_B=2202
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1034014 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 519262 0x53E2488: strdup (strdup.c:42)
+  n1: 518837 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 518837 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 518837 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 518837 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 518837 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 425 in 3 places, all below massif's threshold (1.00%)
+ n1: 502784 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 502784 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 502784 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 502784 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 502784 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 11968 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=51
+#-----------
+time=101255709
+mem_heap_B=1033974
+mem_heap_extra_B=2202
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=101369725
+mem_heap_B=1259747
+mem_heap_extra_B=2413
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1259747 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 744771 0x53E2488: strdup (strdup.c:42)
+  n1: 744311 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 744311 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 744311 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 744311 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 744311 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 460 in 3 places, all below massif's threshold (1.00%)
+ n1: 502784 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 502784 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 502784 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 502784 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 502784 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 12192 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=53
+#-----------
+time=167550227
+mem_heap_B=1263039
+mem_heap_extra_B=3137
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=167795390
+mem_heap_B=1766168
+mem_heap_extra_B=3264
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1766168 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1249256 0x53E2488: strdup (strdup.c:42)
+  n1: 1248634 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 1248634 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 1248634 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 1248634 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 1248634 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 622 in 3 places, all below massif's threshold (1.00%)
+ n1: 503808 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 503808 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 503808 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 503808 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 503808 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 13104 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=55
+#-----------
+time=193422365
+mem_heap_B=1766128
+mem_heap_extra_B=3264
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=193521655
+mem_heap_B=1961450
+mem_heap_extra_B=3462
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1961450 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1444314 0x53E2488: strdup (strdup.c:42)
+  n1: 1443657 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 1443657 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 1443657 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 1443657 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 1443657 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 657 in 3 places, all below massif's threshold (1.00%)
+ n1: 503808 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 503808 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 503808 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 503808 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 503808 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 13328 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=57
+#-----------
+time=259634937
+mem_heap_B=1963794
+mem_heap_extra_B=4230
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=259878898
+mem_heap_B=2466327
+mem_heap_extra_B=4337
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2466327 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1948279 0x53E2488: strdup (strdup.c:42)
+  n1: 1947460 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 1947460 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 1947460 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 1947460 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 1947460 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 819 in 3 places, all below massif's threshold (1.00%)
+ n1: 503808 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 503808 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 503808 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 503808 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 503808 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 14240 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=59
+#-----------
+time=269613038
+mem_heap_B=2466287
+mem_heap_extra_B=4337
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=269653555
+mem_heap_B=2540314
+mem_heap_extra_B=4534
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2540314 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 2022042 0x53E2488: strdup (strdup.c:42)
+  n1: 2021188 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 2021188 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 2021188 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 2021188 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 2021188 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 854 in 3 places, all below massif's threshold (1.00%)
+ n1: 503808 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 503808 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 503808 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 503808 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 503808 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 14464 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=61
+#-----------
+time=280996100
+mem_heap_B=2542655
+mem_heap_extra_B=5257
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=281037709
+mem_heap_B=2627646
+mem_heap_extra_B=5386
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2627646 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 2108462 0x53E2488: strdup (strdup.c:42)
+  n1: 2107445 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 2107445 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 2107445 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 2107445 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 2107445 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 1017 in 3 places, all below massif's threshold (1.00%)
+ n1: 503808 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 503808 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 503808 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 503808 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 503808 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 15376 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=63
+#-----------
+time=289208393
+mem_heap_B=2627606
+mem_heap_extra_B=5370
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=289243456
+mem_heap_B=2690165
+mem_heap_extra_B=5595
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2690165 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 2170757 0x53E2488: strdup (strdup.c:42)
+  n1: 2169705 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 2169705 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 2169705 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 2169705 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 2169705 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 1052 in 3 places, all below massif's threshold (1.00%)
+ n1: 503808 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 503808 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 503808 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 503808 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 503808 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 15600 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=65
+#-----------
+time=307123812
+mem_heap_B=2692534
+mem_heap_extra_B=6306
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=307189665
+mem_heap_B=2827342
+mem_heap_extra_B=6426
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2827342 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 2307022 0x53E2488: strdup (strdup.c:42)
+  n1: 2305804 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 2305804 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 2305804 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 2305804 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 2305804 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 1218 in 3 places, all below massif's threshold (1.00%)
+ n1: 503808 0x404FB8: mxml_add_char (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 503808 0x4084DB: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 503808 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 503808 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n0: 503808 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 16512 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=309830279
+mem_heap_B=2827302
+mem_heap_extra_B=6410
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=311339822
+mem_heap_B=2348432
+mem_heap_extra_B=7544
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=385937088
+mem_heap_B=2498192
+mem_heap_extra_B=8856
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=460607067
+mem_heap_B=2647952
+mem_heap_extra_B=9384
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=535254241
+mem_heap_B=2797712
+mem_heap_extra_B=9912
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=535319134
+mem_heap_B=2945168
+mem_heap_extra_B=10424
+mem_stacks_B=0
+heap_tree=peak
+n4: 2945168 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 2328744 0x53E2488: strdup (strdup.c:42)
+  n1: 2327315 0x4115AE: mxmlNewOpaque (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 2327315 0x4088B0: mxml_load_data.constprop.5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 2327315 0x4036EC: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 2327315 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n0: 2327315 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n0: 1429 in 3 places, all below massif's threshold (1.00%)
+ n1: 444672 0x403BF0: init_tensor (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 444672 0x4024F0: init_convolutional_mod (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 444672 0x402C91: init_module (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n1: 444672 0x4033B7: parse_container (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+     n1: 444672 0x40372E: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+      n1: 444672 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+       n0: 444672 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n1: 147456 0x40341C: parse_container (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+  n1: 147456 0x40372E: parse_network (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+   n1: 147456 0x40154E: test_system_5 (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+    n0: 147456 0x401389: main (in /home/studio/Scrivania/TEST/TEST_NET_PARSER/20c-net)
+ n0: 24296 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=73
+#-----------
+time=548269545
+mem_heap_B=2826912
+mem_heap_extra_B=10440
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=568558993
+mem_heap_B=2870512
+mem_heap_extra_B=11256
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=577692872
+mem_heap_B=999420
+mem_heap_extra_B=7124
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=933845715
+mem_heap_B=1400828
+mem_heap_extra_B=7140
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=1240943838
+mem_heap_B=1746940
+mem_heap_extra_B=7156
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=1502620393
+mem_heap_B=2041852
+mem_heap_extra_B=7172
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=1616208956
+mem_heap_B=2502652
+mem_heap_extra_B=7188
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=1792254351
+mem_heap_B=2963452
+mem_heap_extra_B=7204
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=1794699484
+mem_heap_B=2968060
+mem_heap_extra_B=7220
+mem_stacks_B=0
+heap_tree=empty

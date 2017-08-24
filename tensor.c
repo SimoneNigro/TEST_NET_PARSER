@@ -196,32 +196,32 @@ tensor convolve_tensors(tensor input, tensor *filter_banks, tensor *bias, int n_
 #endif
 // NEW CONVOLUTION ENGINE CODE HERE
 //#if 0
-static void convolve_patches(tensor_data_t *out, tensor filter, tensor input, int depth, int h_offset, int w_offset)
+static void convolve_patches(tensor_data_t *out, tensor_data_t *filter_data, tensor_data_t *input, int filter_i, int depth, int h_offset, int w_offset, layer_config curr_layer)
 {	
-	int fil_depth_offset = depth*filter.w*filter.h;
-	int in_depth_offset = depth*input.w*input.h;
+	int fil_depth_offset = filter_i * depth*curr_layer.ker_w*curr_layer.ker_h;
+	int in_depth_offset = depth*curr_layer.in_w*curr_layer.in_h;
 	
 	int input_offset = in_depth_offset;
 	int filter_offset = fil_depth_offset;
 	
-	tensor_data_t *in_data_ptr = input.data;
-	tensor_data_t *fil_data_ptr = filter.data;
+	//tensor_data_t *in_data_ptr = input.data;
+	//tensor_data_t *fil_data_ptr = filter.data;
 	
 	int h_i, w_i;
-	for(h_i = 0; h_i < filter.h; h_i++)
+	for(h_i = 0; h_i < curr_layer.ker_h; h_i++)
 	{
-		input_offset += (h_offset + h_i)*input.w;
-		filter_offset += h_i*filter.w;
+		input_offset += (h_offset + h_i)*curr_layer.in_w;
+		filter_offset += h_i*curr_layer.ker_w;
 		
-		for(w_i = 0; w_i < filter.w; w_i++)
-			*out += in_data_ptr[input_offset + w_offset + w_i]*fil_data_ptr[filter_offset + w_i];
+		for(w_i = 0; w_i < curr_layer.ker_w; w_i++)
+			*out += input[input_offset + w_offset + w_i]*filter_data[filter_offset + w_i];
 		
 		input_offset = in_depth_offset;
 		filter_offset = fil_depth_offset;
 	}	
 }
 
-void convolve_tensors(tensor *out, int out_len, tensor input, tensor *filters, tensor *bias, int n_filters, int pad_h, int pad_w, int stride_h, int stride_w)
+void convolve_tensors(tensor_data_t *out, tensor_data_t *input, tensor_data_t *filters, tensor *bias, layer_config curr_layer)
 {/*
 	tensor out_vol;
 	
@@ -233,11 +233,11 @@ void convolve_tensors(tensor *out, int out_len, tensor input, tensor *filters, t
 	// TEST
 	_mem_alloc_by_volumes += out_vol.d*out_vol.w*out_vol.h*sizeof(tensor_data_t);
 	*/
-	if(pad_h && pad_w) input = pad_tensor(input, pad_h, pad_w);
+	//if(curr_layer.pad_h && curr_layer.pad_w) input = pad_tensor(input, pad_h, pad_w);
 	
 	//tensor_data_t *out_data_ptr = out_vol.data;
 	
-	//int out_len = out_vol.d*out_vol.w*out_vol.h;
+	int out_len = curr_layer.out_ch*curr_layer.out_w*curr_layer.out_h;
 	//int out_slice_len = out_len/out_vol.d;
 	
 	int h_offset = 0;
@@ -249,20 +249,20 @@ void convolve_tensors(tensor *out, int out_len, tensor input, tensor *filters, t
 	int out_i;
 	for(out_i = 0; out_i < out_len; out_i++)
 	{
-		for(depth = 0; depth < input.d; depth++)
-			convolve_patches((*out).data, filters[filter_i], input, depth, h_offset, w_offset);
+		for(depth = 0; depth < curr_layer.in_ch; depth++)
+			convolve_patches(out, filters, input, filter_i, depth, h_offset, w_offset, curr_layer);
 		
 		if(bias)
-			(*out).data[out_i] += (*bias).data[filter_i];
+			out[out_i] += (*bias).data[filter_i];
 		
-		if(w_offset + stride_w + filters[filter_i].w <= input.w) 
-			w_offset += stride_w;
+		if(w_offset + curr_layer.str_w + curr_layer.ker_w <= curr_layer.in_w) 
+			w_offset += curr_layer.str_w;
 		else
 		{
 			w_offset = 0;
 			
-			if(h_offset + stride_h + filters[filter_i].h <= input.h)
-				h_offset += stride_h;
+			if(h_offset + curr_layer.str_h + curr_layer.ker_h <= curr_layer.in_h)
+				h_offset += curr_layer.str_h;
 			else
 			{
 				h_offset = 0;

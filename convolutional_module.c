@@ -92,7 +92,28 @@ void inline forward_convolutional_mod(module *cm)
 	// TEST
 	_mem_alloc_by_volumes += out_vol.d*out_vol.w*out_vol.h*sizeof(tensor_data_t);
 
-	convolve_tensors(&out_vol,out_len,cm->input[0], cm->filters, &(cm->bias), cm->n_filters, cm->pad_h, cm->pad_w, cm->stride_h, cm->stride_w);
+    layer_config curr_layer;
+      
+      curr_layer.in_ch = cm->input[0].d;
+	  curr_layer.in_h = cm->input[0].h;
+	  curr_layer.in_w = cm->input[0].w;
+	  curr_layer.ker_w = cm->filters[0].w;
+	  curr_layer.ker_h = cm->filters[0].h;
+      curr_layer.ker_ch = cm->n_filters;
+	  //layer.n_layer = 1;
+	  curr_layer.pad_w = cm->pad_w;
+	  curr_layer.pad_h = cm->pad_h;
+	  curr_layer.relu = 0;
+	  curr_layer.str_w = cm->stride_w;
+	  curr_layer.str_h = cm->stride_h;
+	  curr_layer.out_ch = cm->n_filters;
+	  curr_layer.out_h = (cm->input[0].h - cm->filters[0].h + 2*cm->pad_h)/cm->stride_h + 1;
+	  curr_layer.out_w = (cm->input[0].w - cm->filters[0].w + 2*cm->pad_w)/cm->stride_w + 1;
+	  curr_layer.mem_addr_input = 0;
+	  curr_layer.mem_addr_output = 0;
+	  curr_layer.mem_addr_weights = 0;
+
+	convolve_tensors(out_vol.data,cm->input[0].data, cm->filters[0].data, &(cm->bias), curr_layer);
 	
 	cm->output = out_vol;
 
