@@ -116,7 +116,8 @@ void inline forward_convolutional_mod(module *cm)
 	convolve_tensors(out_vol.data,cm->input[0].data, cm->filters[0].data, &(cm->bias), curr_layer);
 	
 	cm->output = out_vol;
-
+printf("\nTENSORE DI OUTPUT: \n");
+print_tensor(out_vol);
 	//free_tensor(&out_vol);
 }
 
