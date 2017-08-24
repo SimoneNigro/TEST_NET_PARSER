@@ -198,7 +198,9 @@ tensor convolve_tensors(tensor input, tensor *filter_banks, tensor *bias, int n_
 //#if 0
 static void convolve_patches(tensor_data_t *out, int out_off, tensor_data_t *filter_data, tensor_data_t *input, int filter_i, int depth, int h_offset, int w_offset, layer_config curr_layer)
 {	
-	int fil_depth_offset = filter_i * depth*curr_layer.ker_w*curr_layer.ker_h;
+	//int fil_depth_offset = filter_i * (depth*curr_layer.ker_w*curr_layer.ker_h);
+	int fil_depth_offset = filter_i * (curr_layer.in_ch*curr_layer.ker_w*curr_layer.ker_h) +  depth*curr_layer.ker_w*curr_layer.ker_h;
+    //                     Scelgo il filtro tra i tanti                                    +  scelgo il canale giusto all'interno del filtro scelto
 	int in_depth_offset = depth*curr_layer.in_w*curr_layer.in_h;
 	
 	int input_offset = in_depth_offset;
