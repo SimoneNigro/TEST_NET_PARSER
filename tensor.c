@@ -230,7 +230,7 @@ static void convolve_patches(tensor_data_t *out, int out_off, tensor_data_t *fil
    // printf("out_temp = %f", out_:);
 }
 
-void convolve_tensors(tensor_data_t *out, tensor_data_t *input, tensor_data_t *filters, tensor *bias, layer_config curr_layer)
+void convolve_tensors(tensor_data_t *out, tensor_data_t *input, tensor_data_t *filters, tensor_data_t *bias, layer_config curr_layer)
 {/*
 	tensor out_vol;
 	
@@ -263,8 +263,8 @@ void convolve_tensors(tensor_data_t *out, tensor_data_t *input, tensor_data_t *f
 		
      //   printf("Out addr: %d Out value: %f\n",out_i,out[out_i]);
 
-		if(bias)
-			out[out_i] += (*bias).data[filter_i];
+		if(curr_layer.has_bias)
+			out[out_i] += bias[filter_i];
 		
 		if(w_offset + curr_layer.str_w + curr_layer.ker_w <= curr_layer.in_w) 
 			w_offset += curr_layer.str_w;

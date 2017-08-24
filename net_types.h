@@ -110,6 +110,7 @@ typedef struct layer_config {
   int pad_w;
   int pad_h;
   int relu;
+  int has_bias;
   unsigned int mem_addr_input;
   unsigned int mem_addr_output;
   unsigned int mem_addr_weights;

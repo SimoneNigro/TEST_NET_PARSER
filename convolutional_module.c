@@ -109,11 +109,16 @@ void inline forward_convolutional_mod(module *cm)
 	  curr_layer.out_ch = cm->n_filters;
 	  curr_layer.out_h = (cm->input[0].h - cm->filters[0].h + 2*cm->pad_h)/cm->stride_h + 1;
 	  curr_layer.out_w = (cm->input[0].w - cm->filters[0].w + 2*cm->pad_w)/cm->stride_w + 1;
+	  curr_layer.has_bias = 0;            
 	  curr_layer.mem_addr_input = 0;
 	  curr_layer.mem_addr_output = 0;
 	  curr_layer.mem_addr_weights = 0;
+	
+      if(cm->bias.data)
+	    curr_layer.has_bias = 1;            
 
-//MI SERVE UN UNICO VETTORONE CON TUTTI I PESI, NON UN VETTORE DI TENSORI
+
+       //MI SERVE UN UNICO VETTORONE CON TUTTI I PESI, NON UN VETTORE DI TENSORI
         
         tensor_data_t *weights_ptr = calloc(curr_layer.ker_w*curr_layer.ker_h*curr_layer.in_ch*cm->n_filters, sizeof(tensor_data_t));
 		int fil,i, pos = 0;
@@ -136,7 +141,7 @@ void inline forward_convolutional_mod(module *cm)
     printf("ker_w: %d ker_h: %d ker_ch: %d \n", curr_layer.ker_w, curr_layer.ker_h, curr_layer.ker_ch);
     printf("Un kernel è grande %d : \n",sizeof(cm->filters[0]));
 
-	convolve_tensors(out_vol.data,cm->input[0].data, weights_ptr, &(cm->bias), curr_layer);
+	convolve_tensors(out_vol.data,cm->input[0].data, weights_ptr, cm->bias.data, curr_layer);
 	
 	cm->output = out_vol;
 printf("\nTENSORE DI OUTPUT: \n");
