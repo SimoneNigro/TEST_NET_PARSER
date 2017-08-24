@@ -113,6 +113,11 @@ void inline forward_convolutional_mod(module *cm)
 	  curr_layer.mem_addr_output = 0;
 	  curr_layer.mem_addr_weights = 0;
 
+    printf("LAYER CONFIG:\n");
+    printf("in_w: %d in_h: %d in_ch: %d \n", curr_layer.in_w, curr_layer.in_h, curr_layer.in_ch);
+    printf("out_w: %d out_h: %d out_ch: %d \n", curr_layer.out_w, curr_layer.out_h, curr_layer.out_ch);
+    printf("ker_w: %d ker_h: %d ker_ch: %d \n", curr_layer.ker_w, curr_layer.ker_h, curr_layer.ker_ch);
+
 	convolve_tensors(out_vol.data,cm->input[0].data, cm->filters[0].data, &(cm->bias), curr_layer);
 	
 	cm->output = out_vol;

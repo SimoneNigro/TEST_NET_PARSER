@@ -196,7 +196,7 @@ tensor convolve_tensors(tensor input, tensor *filter_banks, tensor *bias, int n_
 #endif
 // NEW CONVOLUTION ENGINE CODE HERE
 //#if 0
-static void convolve_patches(tensor_data_t *out, tensor_data_t *filter_data, tensor_data_t *input, int filter_i, int depth, int h_offset, int w_offset, layer_config curr_layer)
+static void convolve_patches(tensor_data_t *out, int out_off, tensor_data_t *filter_data, tensor_data_t *input, int filter_i, int depth, int h_offset, int w_offset, layer_config curr_layer)
 {	
 	int fil_depth_offset = filter_i * depth*curr_layer.ker_w*curr_layer.ker_h;
 	int in_depth_offset = depth*curr_layer.in_w*curr_layer.in_h;
@@ -206,6 +206,8 @@ static void convolve_patches(tensor_data_t *out, tensor_data_t *filter_data, ten
 	
 	//tensor_data_t *in_data_ptr = input.data;
 	//tensor_data_t *fil_data_ptr = filter.data;
+
+  //  tensor_data_t out_temp = 0;
 	
 	int h_i, w_i;
 	for(h_i = 0; h_i < curr_layer.ker_h; h_i++)
@@ -214,11 +216,16 @@ static void convolve_patches(tensor_data_t *out, tensor_data_t *filter_data, ten
 		filter_offset += h_i*curr_layer.ker_w;
 		
 		for(w_i = 0; w_i < curr_layer.ker_w; w_i++)
-			*out += input[input_offset + w_offset + w_i]*filter_data[filter_offset + w_i];
-		
+        {
+           // printf("Input addr: %d Filter addr: %d\n",input_offset + w_offset + w_i,filter_offset + w_i);
+			out[out_off] += input[input_offset + w_offset + w_i]*filter_data[filter_offset + w_i];
+		}
 		input_offset = in_depth_offset;
 		filter_offset = fil_depth_offset;
 	}	
+
+ //   out = out_temp;
+   // printf("out_temp = %f", out_:);
 }
 
 void convolve_tensors(tensor_data_t *out, tensor_data_t *input, tensor_data_t *filters, tensor *bias, layer_config curr_layer)
@@ -250,8 +257,10 @@ void convolve_tensors(tensor_data_t *out, tensor_data_t *input, tensor_data_t *f
 	for(out_i = 0; out_i < out_len; out_i++)
 	{
 		for(depth = 0; depth < curr_layer.in_ch; depth++)
-			convolve_patches(out, filters, input, filter_i, depth, h_offset, w_offset, curr_layer);
+			convolve_patches(out, out_i, filters, input, filter_i, depth, h_offset, w_offset, curr_layer);
 		
+     //   printf("Out addr: %d Out value: %f\n",out_i,out[out_i]);
+
 		if(bias)
 			out[out_i] += (*bias).data[filter_i];
 		
